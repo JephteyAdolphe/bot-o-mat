@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jFiles.Controllers.creationController">
+   <TextField layoutX="219.0" layoutY="84.0" />
+   <Label layoutX="130.0" layoutY="88.0" text="Robot Name:" />
+   <RadioButton layoutX="259.0" layoutY="148.0" mnemonicParsing="false" text="Unipedal" />
+   <RadioButton layoutX="259.0" layoutY="178.0" mnemonicParsing="false" text="Bipedal" />
+   <RadioButton layoutX="259.0" layoutY="208.0" mnemonicParsing="false" text="Quadrupedal" />
+   <RadioButton layoutX="259.0" layoutY="238.0" mnemonicParsing="false" text="Arachnid" />
+   <RadioButton layoutX="259.0" layoutY="268.0" mnemonicParsing="false" text="Radial" />
+   <RadioButton layoutX="259.0" layoutY="298.0" mnemonicParsing="false" text="Aeronautical" />
+   <Button layoutX="259.0" layoutY="348.0" mnemonicParsing="false" style="-fx-background-color: #76e072; -fx-background-color:hover: #91f78d;" text="Create" />
+</AnchorPane>
