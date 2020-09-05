@@ -1,5 +1,6 @@
 package jFiles.Controllers;
 
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
@@ -26,6 +28,11 @@ public class mainListController implements Initializable {
     public Label task3;
     public Label task4;
     public Label task5;
+    public AnchorPane background;
+    public Button addButton;
+    public Button completeButton;
+    public Button generateButton;
+    public Label clock;
 
     private ObservableList<String> observable_robot_list = FXCollections.observableArrayList();
     private File file = new File("src/resources/data/mockDatabase.txt");
@@ -87,11 +94,8 @@ public class mainListController implements Initializable {
 
     private void fill_in_details() throws FileNotFoundException {
         String[] details = data.getDetails((String) robotList.getSelectionModel().getSelectedItem());
-        System.out.println(Arrays.toString(details));
-
 
         if(details != null) {
-            System.out.println("made it in");
             task1.setText(taskMap.get(Integer.parseInt(details[0])));
             task2.setText(taskMap.get(Integer.parseInt(details[1])));
             task3.setText(taskMap.get(Integer.parseInt(details[2])));
@@ -112,7 +116,21 @@ public class mainListController implements Initializable {
 
     public void completeTasks(MouseEvent mouseEvent) throws IOException {
         if(task1.getText().length() > 0) {
-            data.completeTasks((String) robotList.getSelectionModel().getSelectedItem());
+            double eta = data.completeTasks((String) robotList.getSelectionModel().getSelectedItem());
+            System.out.println("Time is: " + eta + " seconds");
+
+            /*for(int i = 0; i < eta; i++) {
+                try
+                {
+                    System.out.println((i + 1) + " seconds");
+                    clock.setText(Integer.toString(i + 1));
+                    Thread.sleep(1000);
+                }
+                catch(InterruptedException ex)
+                {
+                    Thread.currentThread().interrupt();
+                }
+            }*/
 
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/views/mainList.fxml"));

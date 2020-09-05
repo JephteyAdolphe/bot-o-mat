@@ -12,5 +12,6 @@
    <RadioButton fx:id="arachnid" layoutX="259.0" layoutY="238.0" mnemonicParsing="false" onMouseClicked="#aracPressed" text="Arachnid" />
    <RadioButton fx:id="radial" layoutX="259.0" layoutY="268.0" mnemonicParsing="false" onMouseClicked="#radialPressed" text="Radial" />
    <RadioButton fx:id="aeronautical" layoutX="259.0" layoutY="298.0" mnemonicParsing="false" onMouseClicked="#aeroPressed" text="Aeronautical" />
-   <Button fx:id="createButton" layoutX="259.0" layoutY="348.0" mnemonicParsing="false" onMouseClicked="#create" text="Create" />
+   <Button fx:id="createButton" layoutX="342.0" layoutY="348.0" mnemonicParsing="false" onMouseClicked="#create" text="Create" />
+   <Button layoutX="219.0" layoutY="348.0" mnemonicParsing="false" onMouseClicked="#cancel" text="Cancel" />
 </AnchorPane>

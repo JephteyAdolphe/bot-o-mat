@@ -112,4 +112,20 @@ public class creationController implements Initializable {
     public void aeroPressed(MouseEvent keyEvent) {
         disableOtherButtons(aeronautical);
     }
+
+    public void cancel(MouseEvent mouseEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/views/mainList.fxml"));
+
+            Parent listRoot = loader.load();
+            Scene list = new Scene(listRoot);
+
+            Stage robot_display = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            robot_display.setScene(list);
+            robot_display.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
