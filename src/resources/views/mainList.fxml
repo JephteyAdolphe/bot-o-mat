@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jFiles.Controllers.mainListController">
+   <children>
+      <Label layoutX="270.0" layoutY="32.0" text="Timer">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <SplitPane dividerPositions="0.29797979797979796" layoutY="127.0" prefHeight="280.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ListView fx:id="robotList" layoutY="-4.0" onMouseClicked="#itemSelection" prefHeight="238.0" prefWidth="175.0" />
+                  <Button layoutX="68.0" layoutY="245.0" mnemonicParsing="false" onMouseClicked="#createRobot" text="Add" />
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="taskPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Button layoutX="63.0" layoutY="67.0" mnemonicParsing="false" onMouseClicked="#completeTasks" text="Complete Tasks" />
+                  <Button layoutX="225.0" layoutY="67.0" mnemonicParsing="false" onMouseClicked="#generateTasks" text="Generate More Tasks" />
+                  <Label fx:id="task1" layoutX="181.0" layoutY="125.0" />
+                  <Label fx:id="task2" layoutX="181.0" layoutY="150.0" />
+                  <Label fx:id="task3" layoutX="181.0" layoutY="175.0" />
+                  <Label fx:id="task4" layoutX="181.0" layoutY="200.0" />
+                  <Label fx:id="task5" layoutX="181.0" layoutY="225.0" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

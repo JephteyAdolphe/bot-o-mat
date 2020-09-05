@@ -4,13 +4,13 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jFiles.Controllers.creationController">
-   <TextField layoutX="219.0" layoutY="84.0" />
+   <TextField fx:id="robotName" layoutX="219.0" layoutY="84.0" />
    <Label layoutX="130.0" layoutY="88.0" text="Robot Name:" />
-   <RadioButton layoutX="259.0" layoutY="148.0" mnemonicParsing="false" text="Unipedal" />
-   <RadioButton layoutX="259.0" layoutY="178.0" mnemonicParsing="false" text="Bipedal" />
-   <RadioButton layoutX="259.0" layoutY="208.0" mnemonicParsing="false" text="Quadrupedal" />
-   <RadioButton layoutX="259.0" layoutY="238.0" mnemonicParsing="false" text="Arachnid" />
-   <RadioButton layoutX="259.0" layoutY="268.0" mnemonicParsing="false" text="Radial" />
-   <RadioButton layoutX="259.0" layoutY="298.0" mnemonicParsing="false" text="Aeronautical" />
-   <Button layoutX="259.0" layoutY="348.0" mnemonicParsing="false" text="Create" />
+   <RadioButton fx:id="unipedal" layoutX="259.0" layoutY="148.0" mnemonicParsing="false" onMouseClicked="#uniPressed" text="Unipedal" />
+   <RadioButton fx:id="bipedal" layoutX="259.0" layoutY="178.0" mnemonicParsing="false" onMouseClicked="#biPressed" text="Bipedal" />
+   <RadioButton fx:id="quadrupedal" layoutX="259.0" layoutY="208.0" mnemonicParsing="false" onMouseClicked="#quadPressed" text="Quadrupedal" />
+   <RadioButton fx:id="arachnid" layoutX="259.0" layoutY="238.0" mnemonicParsing="false" onMouseClicked="#aracPressed" text="Arachnid" />
+   <RadioButton fx:id="radial" layoutX="259.0" layoutY="268.0" mnemonicParsing="false" onMouseClicked="#radialPressed" text="Radial" />
+   <RadioButton fx:id="aeronautical" layoutX="259.0" layoutY="298.0" mnemonicParsing="false" onMouseClicked="#aeroPressed" text="Aeronautical" />
+   <Button fx:id="createButton" layoutX="259.0" layoutY="348.0" mnemonicParsing="false" onMouseClicked="#create" text="Create" />
 </AnchorPane>

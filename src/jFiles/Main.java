@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import resources.data.dataCenter;
 
 import java.util.Objects;
 
@@ -12,15 +13,21 @@ import java.util.Objects;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception {        // Landing Page (Robot Creation)
+    public void start(Stage primaryStage) throws Exception {        // Landing Page (Robot List)
 
-        Parent createRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("resources/views/creation.fxml")));
-        Scene creation = new Scene(createRoot);
+        Parent mainRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("resources/views/mainList.fxml")));
+        Scene main = new Scene(mainRoot);
 
 
         primaryStage.setTitle("Jeff's Bot-O-Mat");
-        primaryStage.setScene(creation);
+        primaryStage.setScene(main);
         primaryStage.show();
+    }
+
+    @Override
+    public void stop() throws Exception {       // Clears text file data
+        dataCenter data = new dataCenter();
+        data.clear();
     }
 
     public static void main(String[] args) {
