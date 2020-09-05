@@ -9,6 +9,8 @@ public class dataCenter {
     private File file = new File("src/resources/data/mockDatabase.txt");
     private File taskFile = new File("src/resources/data/tasks.txt");
 
+    // Adds the created robot (and tasks) to the appropriate text files
+
     public void write(String name, String type, int completedTasks, ArrayList<Integer> toDo) throws IOException {
         PrintWriter pw = new PrintWriter(new FileWriter(this.file, true));
         PrintWriter pwTasks = new PrintWriter(new FileWriter(this.taskFile, true));
@@ -43,7 +45,7 @@ public class dataCenter {
         return null;
     }
 
-    // Deletes all data connected to the selected robot
+    // Updates all data connected to the selected robot
 
     private double updateRobot(String robotToUpdate) throws IOException {
 
@@ -94,6 +96,8 @@ public class dataCenter {
         return eta;
     }
 
+    // Sorts robots in descending order based on how many tasks it completed
+
     private void sortLeaderboard() throws IOException {
         ArrayList<String> robots = new ArrayList<>();
         ArrayList<Integer> numOfTasksCompleted = new ArrayList<>();
@@ -113,7 +117,6 @@ public class dataCenter {
         int counter = numOfTasksCompleted.size() - 1;
         while(sortedRobots.size() != robots.size()) {
             String task = Integer.toString(numOfTasksCompleted.get(counter));
-            System.out.println("Task --> " + task);
 
             for(int i = 0; i < robots.size(); i++) {
                 if(robots.get(i).contains(task) && !seen.contains(robots.get(i))) {
@@ -135,11 +138,12 @@ public class dataCenter {
 
         for(int i = 0; i < sortedRobots.size(); i++) {
             pw.println(sortedRobots.get(i));
-            System.out.println(sortedRobots.get(i));
         }
         sortedRobots.clear();
         pw.close();
     }
+
+    // Checks if the robot already exists
 
     public boolean exists(String robot) throws FileNotFoundException {
         Scanner scan = new Scanner(file);
@@ -199,6 +203,8 @@ public class dataCenter {
         }
         pwTasks.close();
     }
+
+    // Calculates total time needed to complete the tasks
 
     private double getTime(String[] tasks) {
         double totalETA = 0;

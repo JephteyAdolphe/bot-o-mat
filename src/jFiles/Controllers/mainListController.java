@@ -1,6 +1,5 @@
 package jFiles.Controllers;
 
-import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -53,16 +52,7 @@ public class mainListController implements Initializable {
                 listed_robots.add(robot);
             }
         }
-
-        //Collections.sort(observable_robot_list, String.CASE_INSENSITIVE_ORDER);
         scan.close();
-    }
-
-    // Returns the existing robots
-
-    ArrayList<String> getList() throws FileNotFoundException {
-        scanFile();
-        return listed_robots;
     }
 
     // Loads the existing robots
@@ -111,7 +101,7 @@ public class mainListController implements Initializable {
     }
 
     public void itemSelection(MouseEvent mouseEvent) throws FileNotFoundException {
-        fill_in_details();
+        fill_in_details();  // Fills in the labels for the tasks
     }
 
     public void completeTasks(MouseEvent mouseEvent) throws IOException {
@@ -148,6 +138,8 @@ public class mainListController implements Initializable {
         }
     }
 
+    // Generates a new batch of tasks
+
     public void generateTasks(MouseEvent mouseEvent) throws IOException {
         if(task1.getText().equals("")) {
             data.generateTasks((String) robotList.getSelectionModel().getSelectedItem());
@@ -167,6 +159,8 @@ public class mainListController implements Initializable {
             }
         }
     }
+
+    // Takes user to the robot creation page
 
     public void createRobot(MouseEvent mouseEvent) {
         try {

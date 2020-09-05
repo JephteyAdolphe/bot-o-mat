@@ -34,12 +34,13 @@ public class creationController implements Initializable {
 
 
     public void create(MouseEvent mouseEvent) throws IOException {
+        // Check for valid user input (name less than 10 char)
 
-        if(!robotName.getText().trim().equals("") && getRobotType() != null && robotName.getText().trim().length() <= 10) {    // Check for valid user input (name less than 10 char)
+        if(!robotName.getText().trim().equals("") && getRobotType() != null && robotName.getText().trim().length() <= 10) {
 
             String robot = robotName.getText().trim() + ", " + getRobotType();  // Creates robot
             if(!data.exists(robot)) {
-                Robot rob = new Robot(robot);
+                Robot rob = new Robot();
                 data.write(robotName.getText().trim(), getRobotType(), 0, rob.getTasks());
 
                 try {
@@ -69,6 +70,7 @@ public class creationController implements Initializable {
         buttons.add(aeronautical);
     }
 
+    // Allows for a maximum of one radio button to be toggled
     private void disableOtherButtons(RadioButton rad) {
         for(int i = 0; i < buttons.size(); i++) {
             if(buttons.get(i) != rad) {
@@ -77,6 +79,7 @@ public class creationController implements Initializable {
         }
     }
 
+    // Checks which robot type was selected during creation and returns it
     private String getRobotType() {
         String type = null;
 
@@ -113,6 +116,7 @@ public class creationController implements Initializable {
         disableOtherButtons(aeronautical);
     }
 
+    // Goes back to main dash without creating a robot
     public void cancel(MouseEvent mouseEvent) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/views/mainList.fxml"));
