@@ -31,7 +31,6 @@ public class mainListController implements Initializable {
     public Button addButton;
     public Button completeButton;
     public Button generateButton;
-    public Label clock;
 
     private ObservableList<String> observable_robot_list = FXCollections.observableArrayList();
     private File file = new File("src/resources/data/mockDatabase.txt");
@@ -109,18 +108,17 @@ public class mainListController implements Initializable {
             double eta = data.completeTasks((String) robotList.getSelectionModel().getSelectedItem());
             System.out.println("Time is: " + eta + " seconds");
 
-            /*for(int i = 0; i < eta; i++) {
+            for(double i = eta; i >= 0; i--) {
                 try
                 {
-                    System.out.println((i + 1) + " seconds");
-                    clock.setText(Integer.toString(i + 1));
+                    System.out.println(i + " seconds");
                     Thread.sleep(1000);
                 }
                 catch(InterruptedException ex)
                 {
                     Thread.currentThread().interrupt();
                 }
-            }*/
+            }
 
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/views/mainList.fxml"));
