@@ -1,3 +1,11 @@
+# How to Use
+1. Open command prompt
+2. Enter "git clone https://github.com/JephteyAdolphe/bot-o-mat.git"
+3. Open up the project in an IDE and run the Main.java file (located in jFiles directory)
+4. Realized at the last minute that since the GUI was created using JavaFX, it may or may not work so I made a brief demo video
+showing how the GUI functions --> https://drive.google.com/file/d/1-r4nK3w9rYb7KBXyTdr8DSv8y8yeYXC5/view?usp=sharing
+
+
 # BOT-O-MAT
 Use any language to complete this challenge. The implementation is up to you: it can be a command-line application or have a graphical interface.
 
